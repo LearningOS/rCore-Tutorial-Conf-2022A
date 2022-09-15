@@ -109,8 +109,9 @@ clean_home_dir:
 clean_data: clean_home_dir
 
 .PHONY: clean_images
+clean_images:
 	-$(DOCKER) rmi $(USER_IMG)
-	-$(DOCKER) rmi $(EXTRAS_IMG)
+	-$(DOCKER) rmi $(BASE_IMG)
 
 .PHONY: clean
 clean: clean_data clean_images

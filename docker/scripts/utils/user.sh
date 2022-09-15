@@ -63,8 +63,8 @@ This is an ephemeral docker container! You can do things to it using
 sudo, but when you exit, changes made outside of the /host directory
 will be lost.
 If you want your changes to be permanent, add them to the
-    extras.dockerfile
-in the dev-env dockerfiles repo.
+    user.dockerfile
+in the conf dockerfiles repo.
 ####################################################################
 
 EOF

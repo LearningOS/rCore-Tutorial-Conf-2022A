@@ -34,9 +34,6 @@ rm "$TEMP_DIR/rustup.sh"
 # shellcheck disable=SC1090
 source "$CARGO_HOME"/env
 
-# Make sure that all the files are accessible to other users:
-try_nonroot_first chmod -R a+w "$CARGO_HOME" "$RUSTUP_HOME"
-
 rustup --version
 cargo --version
 rustc --version
@@ -45,3 +42,6 @@ rustc --version
 rustup target add riscv64gc-unknown-none-elf
 cargo install cargo-binutils
 rustup component add rust-src llvm-tools-preview
+
+# Make sure that all the files are accessible to other users:
+try_nonroot_first chmod -R a+w "$CARGO_HOME" "$RUSTUP_HOME"
