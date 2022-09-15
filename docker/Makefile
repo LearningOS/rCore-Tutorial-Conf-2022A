@@ -87,7 +87,7 @@ endif
 
 .PHONY: build_base
 build_base: run_checks
-	$(DOCKER_BUILD) $(DOCKER_FLAGS) -t $(BASE_IMG) -f dockerfiles/base.Dockerfile .
+	$(DOCKER_BUILD) $(DOCKER_FLAGS) -t $(BASE_IMG) -f ./dockerfiles/base.Dockerfile .
 
 .PHONY: build_user
 build_user: run_checks build_base
@@ -97,7 +97,7 @@ build_user: run_checks build_base
 		--build-arg=UID=$(shell id -u) \
 		--build-arg=GID=$(shell id -g) \
 		--build-arg=GROUP=$(shell id -gn) \
-		-f dockerfiles/user.Dockerfile \
+		-f ./dockerfiles/user.Dockerfile \
 		-t $(USER_IMG) \
 		.
 
