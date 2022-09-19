@@ -25,7 +25,9 @@ as_root apt install -y --no-install-recommends \
     build-essential \
     curl \
     wget \
-    python3
+    python3 \
+    tmux \
+    gcc-riscv64-unknown-elf
 # end of list
 
 # Add some symlinks so some programs can find things
